@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zex Communications</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.5;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #2563eb; /* blue-600 */
+        }
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 1.5rem !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white p-4 sticky top-0 z-50 shadow-lg transition-shadow duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">Zex Communications</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-blue-300">Home</a>
+                <a href="products.html" class="hover:text-blue-300">Products</a>
+                <a href="services.html" class="hover:text-blue-300">Services</a>
+                <a href="contact.html" class="hover:text-blue-300">Contact</a>
+            </div>
+            <button class="md:hidden" title="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gray-900">
+        <div class="swiper hero-swiper h-[600px]">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide relative">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80')] bg-cover bg-center">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-gray-900/80"></div>
+                    </div>
+                    <div class="relative h-full container mx-auto px-4 flex items-center">
+                        <div class="max-w-2xl">
+                            <span class="inline-block text-blue-400 text-sm font-semibold tracking-wider mb-4">INNOVATIVE SOLUTIONS</span>
+                            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Transforming Business Through Technology</h1>
+                            <p class="text-gray-300 text-xl mb-8 max-w-lg">Empowering enterprises with cutting-edge communication solutions and security systems.</p>
+                            <div class="flex gap-4">
+                                <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded hover:bg-blue-700 transition duration-300 inline-flex items-center">
+                                    Get Started
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <a href="#products" class="border border-white text-white px-8 py-3 rounded hover:bg-white/10 transition duration-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide relative">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80')] bg-cover bg-center">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-gray-900/80"></div>
+                    </div>
+                    <div class="relative h-full container mx-auto px-4 flex items-center">
+                        <div class="max-w-2xl">
+                            <span class="inline-block text-blue-400 text-sm font-semibold tracking-wider mb-4">ENTERPRISE SOLUTIONS</span>
+                            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Advanced Communication Systems</h1>
+                            <p class="text-gray-300 text-xl mb-8 max-w-lg">State-of-the-art PBX & IP telephony solutions designed for modern businesses.</p>
+                            <div class="flex gap-4">
+                                <a href="#products" class="bg-blue-600 text-white px-8 py-3 rounded hover:bg-blue-700 transition duration-300 inline-flex items-center">
+                                    View Solutions
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <a href="#contact" class="border border-white text-white px-8 py-3 rounded hover:bg-white/10 transition duration-300">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide relative">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80')] bg-cover bg-center">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-gray-900/80"></div>
+                    </div>
+                    <div class="relative h-full container mx-auto px-4 flex items-center">
+                        <div class="max-w-2xl">
+                            <span class="inline-block text-blue-400 text-sm font-semibold tracking-wider mb-4">SUSTAINABLE TECHNOLOGY</span>
+                            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Green Energy Solutions</h1>
+                            <p class="text-gray-300 text-xl mb-8 max-w-lg">Powering the future with sustainable solar energy systems and smart infrastructure.</p>
+                            <div class="flex gap-4">
+                                <a href="#services" class="bg-blue-600 text-white px-8 py-3 rounded hover:bg-blue-700 transition duration-300 inline-flex items-center">
+                                    Explore Services
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <a href="#contact" class="border border-white text-white px-8 py-3 rounded hover:bg-white/10 transition duration-300">Get Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next !text-white after:!text-2xl"></div>
+            <div class="swiper-button-prev !text-white after:!text-2xl"></div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- CCTV Cameras -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <i class="fas fa-video text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">CCTV Cameras</h3>
+                    <p class="text-gray-600 mb-4">High-quality surveillance systems for maximum security coverage.</p>
+                    <a href="#" class="text-blue-900 font-bold hover:text-blue-700">Learn More →</a>
+                </div>
+
+                <!-- PBX & IP Phones -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <i class="fas fa-phone-alt text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">PBX & IP Phones</h3>
+                    <p class="text-gray-600 mb-4">Advanced communication solutions for your business needs.</p>
+                    <a href="#" class="text-blue-900 font-bold hover:text-blue-700">Learn More →</a>
+                </div>
+
+                <!-- Solar Installations -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <i class="fas fa-solar-panel text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Solar Installations</h3>
+                    <p class="text-gray-600 mb-4">Sustainable energy solutions for homes and businesses.</p>
+                    <a href="#" class="text-blue-900 font-bold hover:text-blue-700">Learn More →</a>
+                </div>
+
+                <!-- Biometric Doors -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <i class="fas fa-fingerprint text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Biometric Doors</h3>
+                    <p class="text-gray-600 mb-4">Advanced access control systems for enhanced security.</p>
+                    <a href="#" class="text-blue-900 font-bold hover:text-blue-700">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Products</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- CCTV Section -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-64">
+                        <div class="swiper-container h-full" id="cctvSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19" alt="CCTV Camera" class="w-full h-full object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1553263316-1e056101f686" alt="Security System" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-4">Advanced CCTV Solutions</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>4K Ultra HD Resolution with Night Vision</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>AI-Powered Motion Detection</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Cloud Storage & Remote Access</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Biometric Section -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-64">
+                        <div class="swiper-container h-full" id="biometricSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7" alt="Biometric Scanner" class="w-full h-full object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1624969862644-791f3dc98927" alt="Access Control" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-4">Biometric Access Control</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Multi-factor Authentication</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Fingerprint & Facial Recognition</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Time Attendance Integration</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+            <div class="swiper-container" id="testimonialSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-blue-800 rounded-lg p-8 mx-4">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Client" class="w-16 h-16 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold">John Smith</h4>
+                                    <p class="text-blue-300">Business Owner</p>
+                                </div>
+                            </div>
+                            <p class="italic">"The CCTV installation has transformed our security system. The quality and service are exceptional!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-blue-800 rounded-lg p-8 mx-4">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" class="w-16 h-16 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold">Sarah Johnson</h4>
+                                    <p class="text-blue-300">Office Manager</p>
+                                </div>
+                            </div>
+                            <p class="italic">"The biometric access control system has streamlined our office security. Highly recommended!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-200 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Installation Services</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Professional CCTV Installation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>PBX System Setup</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Solar Panel Installation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Biometric Access Control Setup</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Maintenance & Support</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>24/7 Technical Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Regular Maintenance</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>System Upgrades</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Emergency Repairs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-900">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-900">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Message</label>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-900" rows="4"></textarea>
+                    </div>
+                    <button class="bg-blue-900 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition duration-300">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Zex Communications</h3>
+                    <p>Your trusted partner in security and technology solutions.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <p>Email: info@zexcomm.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Address: 123 Security Street</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-blue-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-blue-300"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-blue-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8 pt-8 border-t border-blue-800">
+                <p>&copy; 2024 Zex Communications. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add before closing body tag -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script>
+        // Initialize Swipers
+        new Swiper('#cctvSwiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+            },
+        });
+
+        new Swiper('#biometricSwiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3500,
+            },
+        });
+
+        new Swiper('#testimonialSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 4000,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Update Hero Swiper initialization
+        new Swiper('.hero-swiper', {
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + ' w-3 h-3"></span>';
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Add scroll event listener for nav shadow
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('shadow-xl', 'bg-blue-900/95', 'backdrop-blur-sm');
+            } else {
+                nav.classList.remove('shadow-xl', 'bg-blue-900/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html> 
