@@ -6,6 +6,9 @@
     <title>Services - Zex Communications</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add AOS CSS and JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
     <!-- Navigation -->
@@ -26,10 +29,13 @@
     </nav>
 
     <!-- Services Header -->
-    <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12">
-        <div class="container mx-auto text-center px-4">
-            <h1 class="text-4xl font-bold mb-4">Our Services</h1>
-            <p class="text-xl">Professional installation and maintenance services</p>
+    <header class="relative bg-blue-900 text-white py-24">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80" alt="Services" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="relative container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Our Services</h1>
+            <p class="text-xl opacity-90">Comprehensive solutions for your business needs</p>
         </div>
     </header>
 
@@ -40,9 +46,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Service Card 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
-                    <img src="https://www.securitysales.com/wp-content/uploads/2020/07/AdobeStock_331148001-1.jpeg" alt="Security System Installation" class="w-full h-64 object-cover">
+                    <img src="https://regionsecurityguarding.co.uk/wp-content/uploads/2024/12/Who-can-install-a-security-camera.png" alt="Security System Installation" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Security System Installation</h3>
+                        <h3 class="text-xl font-bold mb-2">CCTV Technology Installations</h3>
                         <p class="text-gray-600 mb-4">Professional installation of security systems including cameras, alarms, and access control. Our certified technicians ensure optimal placement and configuration for maximum security coverage.</p>
                         <a href="service-details.html?id=1" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">Learn More</a>
                     </div>
@@ -50,9 +56,9 @@
 
                 <!-- Service Card 2 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://www.jmksecurity.com/images/security-system-maintenance.jpg" alt="Maintenance Services" class="w-full h-64 object-cover">
+                    <img src="https://www.wls.ltd/wp-content/uploads/2024/05/Door-access-control-system-installation-london.jpg" alt="Maintenance Services" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">24/7 Monitoring & Maintenance</h3>
+                        <h3 class="text-xl font-bold mb-2">Biometric Installations</h3>
                         <p class="text-gray-600 mb-4">Round-the-clock monitoring of your security systems with regular maintenance checks, software updates, and emergency repair services to ensure continuous protection.</p>
                         <a href="service-details.html?id=2" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">Learn More</a>
                     </div>
@@ -63,9 +69,9 @@
             <div class="grid grid-cols-1 my-5 md:grid-cols-2 gap-8">
                 <!-- Service Card 3 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
-                    <img src="https://www.solarpowerworldonline.com/wp-content/uploads/2020/08/residential-solar-install.jpg" alt="Solar Installation" class="w-full h-64 object-cover">
+                    <img src="https://www.dostech.ae/wp-content/uploads/2015/05/IP-PBX.jpg" alt="Solar Installation" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Solar System Installation</h3>
+                        <h3 class="text-xl font-bold mb-2">PABX Telephpone and IP Phone Installations</h3>
                         <p class="text-gray-600 mb-4">Expert installation of solar power systems for homes and businesses. Includes system design, permitting, installation, and grid connection services with warranty coverage.</p>
                         <a href="service-details.html?id=3" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">Learn More</a>
                     </div>
@@ -73,9 +79,9 @@
 
                 <!-- Service Card 4 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://www.securityinfowatch.com/home/article/21130359/security-consulting-services-your-path-to-success" alt="Security Consulting" class="w-full h-64 object-cover">
+                    <img src="https://assets.lendahand.com/article/image/904/w1920h1080_Solarenergy.jpg" alt="Security Consulting" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Security Consulting Services</h3>
+                        <h3 class="text-xl font-bold mb-2">Solar System Installations</h3>
                         <p class="text-gray-600 mb-4">Comprehensive security assessments, risk analysis, and customized security planning for businesses. We help identify vulnerabilities and recommend optimal security solutions.</p>
                         <a href="service-details.html?id=4" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-block">Learn More</a>
                     </div>
@@ -116,6 +122,16 @@
         AOS.init({
             duration: 1000,
             once: true,
+        });
+
+        // Add hover effect to service cards
+        document.querySelectorAll('.bg-white').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('transform', 'scale-105', 'transition-transform');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('transform', 'scale-105', 'transition-transform');
+            });
         });
 
         // Add scroll event listener for nav shadow

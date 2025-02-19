@@ -21,6 +21,31 @@
         .swiper-button-prev:after {
             font-size: 1.5rem !important;
         }
+        .hero-swiper .swiper-pagination-bullet {
+            width: 2rem;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 0;
+            transition: all 0.3s;
+        }
+        
+        .hero-swiper .swiper-pagination-bullet-active {
+            background: #fff;
+            width: 3rem;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -43,26 +68,63 @@
 
     <!-- Hero Section -->
     <header class="relative bg-gray-900">
-        <div class="swiper hero-swiper h-[600px]">
+        <div class="swiper hero-swiper h-[80vh] min-h-[600px]">
             <div class="swiper-wrapper">
                 <!-- Slide 1 -->
                 <div class="swiper-slide relative">
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80')] bg-cover bg-center">
-                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-gray-900/80"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/95 to-gray-900/90"></div>
                     </div>
                     <div class="relative h-full container mx-auto px-4 flex items-center">
                         <div class="max-w-2xl">
-                            <span class="inline-block text-blue-400 text-sm font-semibold tracking-wider mb-4">INNOVATIVE SOLUTIONS</span>
-                            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Transforming Business Through Technology</h1>
-                            <p class="text-gray-300 text-xl mb-8 max-w-lg">Empowering enterprises with cutting-edge communication solutions and security systems.</p>
-                            <div class="flex gap-4">
-                                <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded hover:bg-blue-700 transition duration-300 inline-flex items-center">
-                                    Get Started
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <div class="flex items-center gap-2 mb-6">
+                                <span class="h-1 w-12 bg-blue-500"></span>
+                                <span class="text-blue-400 text-sm font-semibold tracking-wider uppercase">Innovative Solutions</span>
+                            </div>
+                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                                Transform Your <span class="text-blue-400">Business</span> Through Technology
+                            </h1>
+                            <p class="text-gray-300 text-xl mb-8 max-w-lg leading-relaxed">Empowering enterprises with cutting-edge communication solutions and security systems.</p>
+                            <div class="flex flex-col sm:flex-row gap-4 items-start">
+                                <a href="#contact" 
+                                   class="group bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 inline-flex items-center">
+                                    <span class="font-semibold">Get Started</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" 
+                                         class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" 
+                                         viewBox="0 0 20 20" 
+                                         fill="currentColor">
                                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                                     </svg>
                                 </a>
-                                <a href="#products" class="border border-white text-white px-8 py-3 rounded hover:bg-white/10 transition duration-300">Learn More</a>
+                                <a href="#products" 
+                                   class="group border-2 border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-lg hover:bg-white/10 transition duration-300 inline-flex items-center">
+                                    <i class="fas fa-play text-sm mr-2"></i>
+                                    <span class="font-semibold">Watch Demo</span>
+                                </a>
+                            </div>
+                            <!-- Scroll Indicator -->
+                            <div class="hidden md:flex items-center gap-3 mt-16 text-gray-400 animate-bounce">
+                                <svg class="w-5 h-5 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                                <span class="text-sm font-medium">Scroll to explore</span>
+                            </div>
+                        </div>
+                        <!-- Stats Section -->
+                        <div class="hidden lg:flex absolute bottom-12 right-12 bg-white/10 backdrop-blur-md rounded-2xl p-8">
+                            <div class="grid grid-cols-3 gap-8">
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-white mb-1">500+</div>
+                                    <div class="text-blue-300 text-sm">Clients</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-white mb-1">98%</div>
+                                    <div class="text-blue-300 text-sm">Satisfaction</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-white mb-1">24/7</div>
+                                    <div class="text-blue-300 text-sm">Support</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -114,48 +176,148 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next !text-white after:!text-2xl"></div>
-            <div class="swiper-button-prev !text-white after:!text-2xl"></div>
+            <!-- Custom Navigation -->
+            <div class="container mx-auto px-4">
+                <div class="absolute bottom-8 left-4 z-10 flex items-center gap-4">
+                    <button class="swiper-button-prev !static !w-12 !h-12 !bg-white/10 hover:!bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group">
+                        <i class="fas fa-arrow-left text-white text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button class="swiper-button-next !static !w-12 !h-12 !bg-white/10 hover:!bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group">
+                        <i class="fas fa-arrow-right text-white text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <div class="swiper-pagination !static !w-auto"></div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Products Section -->
-    <section id="products" class="py-16">
+    <!-- Featured Products Showcase -->
+    <section class="py-20 bg-gray-200">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Products</h2>
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold tracking-wider uppercase">Our Solutions</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4 text-blue-900">Cutting-Edge Security Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our range of advanced security and communication solutions designed to protect and connect your business</p>
+            </div>
+
+            <!-- Products Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- CCTV Cameras -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <i class="fas fa-video text-4xl text-blue-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">CCTV Cameras</h3>
-                    <p class="text-gray-600 mb-4">High-quality surveillance systems for maximum security coverage.</p>
-                    <a href="#" class="text-blue-900 font-bold hover:text-blue-700">Learn More →</a>
+                <!-- Product Card 1 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-blue-900/80 z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80" 
+                             alt="CCTV System" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-blue-100 rounded-lg">
+                                <i class="fas fa-video text-blue-600 text-xl"></i>
+                            </div>
+                            <span class="text-blue-600 font-semibold ml-3">Security Systems</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">CCTV Surveillance</h3>
+                        <p class="text-gray-600 mb-6 line-clamp-2">Advanced 4K cameras with AI-powered detection and 24/7 monitoring capabilities.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Night Vision</span>
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Motion Detection</span>
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Cloud Storage</span>
+                        </div>
+                        <a href="products.html#cctv" 
+                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors group/link">
+                            Explore Features 
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                 class="h-5 w-5 ml-2 transform group-hover/link:translate-x-1 transition-transform" 
+                                 viewBox="0 0 20 20" 
+                                 fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- PBX & IP Phones -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <i class="fas fa-phone-alt text-4xl text-blue-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">PBX & IP Phones</h3>
-                    <p class="text-gray-600 mb-4">Advanced communication solutions for your business needs.</p>
-                    <a href="#" class="text-blue-900 font-bold hover:text-blue-700">Learn More →</a>
+                <!-- Product Card 2 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-blue-900/80 z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80" 
+                             alt="Access Control" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-blue-100 rounded-lg">
+                                <i class="fas fa-fingerprint text-blue-600 text-xl"></i>
+                            </div>
+                            <span class="text-blue-600 font-semibold ml-3">Access Control</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Biometric Systems</h3>
+                        <p class="text-gray-600 mb-6 line-clamp-2">State-of-the-art biometric authentication with multi-factor security protocols.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Fingerprint</span>
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Facial Recognition</span>
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">RFID</span>
+                        </div>
+                        <a href="products.html#biometric" 
+                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors group/link">
+                            Explore Features 
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                 class="h-5 w-5 ml-2 transform group-hover/link:translate-x-1 transition-transform" 
+                                 viewBox="0 0 20 20" 
+                                 fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Solar Installations -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <i class="fas fa-solar-panel text-4xl text-blue-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">Solar Installations</h3>
-                    <p class="text-gray-600 mb-4">Sustainable energy solutions for homes and businesses.</p>
-                    <a href="#" class="text-blue-900 font-bold hover:text-blue-700">Learn More →</a>
+                <!-- Product Card 3 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-blue-900/80 z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1601972599720-36938d4ecd31?q=80" 
+                             alt="Communication Systems" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-blue-100 rounded-lg">
+                                <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <span class="text-blue-600 font-semibold ml-3">Communication</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">IP Telephony</h3>
+                        <p class="text-gray-600 mb-6 line-clamp-2">Enterprise-grade VoIP solutions with unified communications features.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">HD Voice</span>
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Video Calls</span>
+                            <span class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">Cloud PBX</span>
+                        </div>
+                        <a href="products.html#telephony" 
+                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors group/link">
+                            Explore Features 
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                 class="h-5 w-5 ml-2 transform group-hover/link:translate-x-1 transition-transform" 
+                                 viewBox="0 0 20 20" 
+                                 fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Biometric Doors -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <i class="fas fa-fingerprint text-4xl text-blue-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">Biometric Doors</h3>
-                    <p class="text-gray-600 mb-4">Advanced access control systems for enhanced security.</p>
-                    <a href="#" class="text-blue-900 font-bold hover:text-blue-700">Learn More →</a>
-                </div>
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <a href="products.html" 
+                   class="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transform hover:scale-105 transition-all duration-300">
+                    <span class="font-semibold">View All Products</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -171,10 +333,10 @@
                         <div class="swiper-container h-full" id="cctvSwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19" alt="CCTV Camera" class="w-full h-full object-cover">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK12i6XoQ9uwBOqPmQF8u3ML5dklBe6HP3jA&s" alt="CCTV Camera" class="w-full h-full object-cover">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://images.unsplash.com/photo-1553263316-1e056101f686" alt="Security System" class="w-full h-full object-cover">
+                                    <img src="https://www.resetdataandsecurity.co.nz/wp-content/uploads/2023/09/Home-security-systems.jpg" alt="Security System" class="w-full h-full object-cover">
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
@@ -205,10 +367,10 @@
                         <div class="swiper-container h-full" id="biometricSwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7" alt="Biometric Scanner" class="w-full h-full object-cover">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYFv-wDv0v-pl3K4Z3W5RlJkVKMJmcWJJayA&s" alt="Biometric Scanner" class="w-full h-full object-cover">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://images.unsplash.com/photo-1624969862644-791f3dc98927" alt="Access Control" class="w-full h-full object-cover">
+                                    <img src="https://www.technoedge.ae/img/service/biometric-system-installation-dubai.png" alt="Access Control" class="w-full h-full object-cover">
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
@@ -236,92 +398,403 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-16 bg-blue-900 text-white">
+    <!-- Services Section -->
+    <section id="services" class="bg-gradient-to-br from-gray-100 to-blue-50 py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
-            <div class="swiper-container" id="testimonialSwiper">
-                <div class="swiper-wrapper">
-                    <!-- Testimonial 1 -->
-                    <div class="swiper-slide">
-                        <div class="bg-blue-800 rounded-lg p-8 mx-4">
-                            <div class="flex items-center mb-4">
-                                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Client" class="w-16 h-16 rounded-full mr-4">
-                                <div>
-                                    <h4 class="font-bold">John Smith</h4>
-                                    <p class="text-blue-300">Business Owner</p>
-                                </div>
-                            </div>
-                            <p class="italic">"The CCTV installation has transformed our security system. The quality and service are exceptional!"</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Our Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our comprehensive range of professional services designed to meet your security and communication needs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Installation Services Card -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?q=80" 
+                             alt="Installation Services" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Installation Services</h3>
+                            <p class="text-blue-100">Professional setup and configuration</p>
                         </div>
                     </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="swiper-slide">
-                        <div class="bg-blue-800 rounded-lg p-8 mx-4">
-                            <div class="flex items-center mb-4">
-                                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" class="w-16 h-16 rounded-full mr-4">
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-3 group/item hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-100 p-2 rounded-full group-hover/item:bg-blue-200 transition-colors">
+                                    <i class="fas fa-video text-blue-900"></i>
+                                </div>
                                 <div>
-                                    <h4 class="font-bold">Sarah Johnson</h4>
-                                    <p class="text-blue-300">Office Manager</p>
+                                    <h4 class="font-semibold text-gray-800">Professional CCTV Installation</h4>
+                                    <p class="text-gray-600 text-sm">Expert setup of surveillance systems with optimal positioning</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 group/item hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-100 p-2 rounded-full group-hover/item:bg-blue-200 transition-colors">
+                                    <i class="fas fa-phone-alt text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">PBX System Setup</h4>
+                                    <p class="text-gray-600 text-sm">Complete communication system installation and configuration</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 group/item hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-100 p-2 rounded-full group-hover/item:bg-blue-200 transition-colors">
+                                    <i class="fas fa-solar-panel text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Solar Panel Installation</h4>
+                                    <p class="text-gray-600 text-sm">Professional solar system setup with efficiency optimization</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 group/item hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-100 p-2 rounded-full group-hover/item:bg-blue-200 transition-colors">
+                                    <i class="fas fa-fingerprint text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Biometric Access Control Setup</h4>
+                                    <p class="text-gray-600 text-sm">Secure access system installation with user management</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="services.html#installation" 
+                           class="mt-6 inline-flex items-center text-blue-900 font-semibold hover:text-blue-700 transition-colors group/link">
+                            Learn More 
+                            <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
                                 </div>
                             </div>
-                            <p class="italic">"The biometric access control system has streamlined our office security. Highly recommended!"</p>
+
+                <!-- Maintenance & Support Card -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581092334247-ddef2a41521f?q=80" 
+                             alt="Maintenance & Support" 
+                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Maintenance & Support</h3>
+                            <p class="text-blue-100">24/7 professional technical assistance</p>
                         </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-3 group/item hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-100 p-2 rounded-full group-hover/item:bg-blue-200 transition-colors">
+                                    <i class="fas fa-headset text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">24/7 Technical Support</h4>
+                                    <p class="text-gray-600 text-sm">Round-the-clock assistance for all your technical needs</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 group/item hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-100 p-2 rounded-full group-hover/item:bg-blue-200 transition-colors">
+                                    <i class="fas fa-tools text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Regular Maintenance</h4>
+                                    <p class="text-gray-600 text-sm">Scheduled system checks and preventive maintenance</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 group/item hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-100 p-2 rounded-full group-hover/item:bg-blue-200 transition-colors">
+                                    <i class="fas fa-sync text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">System Upgrades</h4>
+                                    <p class="text-gray-600 text-sm">Latest software updates and system improvements</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 group/item hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-100 p-2 rounded-full group-hover/item:bg-blue-200 transition-colors">
+                                    <i class="fas fa-bolt text-blue-900"></i>
+                            </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Emergency Repairs</h4>
+                                    <p class="text-gray-600 text-sm">Quick response for urgent system issues</p>
+                        </div>
+                            </li>
+                        </ul>
+                        <a href="services.html#support" 
+                           class="mt-6 inline-flex items-center text-blue-900 font-semibold hover:text-blue-700 transition-colors group/link">
+                            Learn More 
+                            <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-12">
+                <a href="contact.html#quote" 
+                   class="inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transform hover:scale-105 transition-all duration-300">
+                    <span>Request a Free Consultation</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="bg-gray-200 py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold mb-4">Installation Services</h3>
-                    <ul class="space-y-2">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Professional CCTV Installation</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>PBX System Setup</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Solar Panel Installation</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Biometric Access Control Setup</li>
-                    </ul>
+    <!-- Partner Companies Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Our Trusted Partners</h2>
+                <div class="w-20 h-1 bg-blue-400 mx-auto mb-6"></div>
+                <p class="text-blue-100 max-w-2xl mx-auto text-lg">Collaborating with industry leaders to deliver excellence in security and communications</p>
+            </div>
+
+            <!-- Partners Grid -->
+            <div class="relative">
+                <!-- Navigation Buttons -->
+                <button 
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 p-4 rounded-full text-white transition-all duration-300 hidden md:flex items-center justify-center group"
+                    title="Previous Partner"
+                >
+                    <i class="fas fa-chevron-left text-xl group-hover:scale-110 transition-transform"></i>
+                </button>
+                
+                <button 
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 p-4 rounded-full text-white transition-all duration-300 hidden md:flex items-center justify-center group"
+                    title="Next Partner"
+                >
+                    <i class="fas fa-chevron-right text-xl group-hover:scale-110 transition-transform"></i>
+                </button>
+
+                <!-- Partners Slider -->
+                <div class="swiper-container" id="partnersSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Partner Cards -->
+                        <div class="swiper-slide p-4">
+                            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 group">
+                                <div class="bg-white rounded-xl p-6 transform group-hover:scale-105 transition-all duration-500">
+                                    <img src="https://www.kra.go.ke/images/images/2020/KRA-Logo.png" 
+                                         alt="KRA Logo" 
+                                         class="h-20 w-auto mx-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500">
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h3 class="text-white font-semibold mb-2">Kenya Revenue Authority</h3>
+                                    <p class="text-blue-200 text-sm">Government Partner</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide p-4">
+                            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 group">
+                                <div class="bg-white rounded-xl p-6 transform group-hover:scale-105 transition-all duration-500">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Safaricom_logo.svg/1200px-Safaricom_logo.svg.png" 
+                                         alt="Safaricom Logo" 
+                                         class="h-20 w-auto mx-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500">
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h3 class="text-white font-semibold mb-2">Safaricom PLC</h3>
+                                    <p class="text-blue-200 text-sm">Telecommunications Partner</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide p-4">
+                            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 group">
+                                <div class="bg-white rounded-xl p-6 transform group-hover:scale-105 transition-all duration-500">
+                                    <img src="https://www.kcb.co.ke/wp-content/uploads/2022/05/KCB_Bank_Logo.png" 
+                                         alt="KCB Logo" 
+                                         class="h-20 w-auto mx-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500">
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h3 class="text-white font-semibold mb-2">KCB Bank Group</h3>
+                                    <p class="text-blue-200 text-sm">Financial Partner</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide p-4">
+                            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 group">
+                                <div class="bg-white rounded-xl p-6 transform group-hover:scale-105 transition-all duration-500">
+                                    <img src="https://www.co-opbank.co.ke/wp-content/uploads/2020/09/Coop-Logo.png" 
+                                         alt="Cooperative Bank Logo" 
+                                         class="h-20 w-auto mx-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500">
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h3 class="text-white font-semibold mb-2">Cooperative Bank</h3>
+                                    <p class="text-blue-200 text-sm">Banking Partner</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide p-4">
+                            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 group">
+                                <div class="bg-white rounded-xl p-6 transform group-hover:scale-105 transition-all duration-500">
+                                    <img src="https://www.nairobiwater.co.ke/images/logo.png" 
+                                         alt="Nairobi Water Logo" 
+                                         class="h-20 w-auto mx-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500">
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h3 class="text-white font-semibold mb-2">Nairobi Water</h3>
+                                    <p class="text-blue-200 text-sm">Utility Partner</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Custom Pagination -->
+                    <div class="mt-12 flex justify-center">
+                        <div class="swiper-pagination !static"></div>
+                    </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold mb-4">Maintenance & Support</h3>
-                    <ul class="space-y-2">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>24/7 Technical Support</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Regular Maintenance</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>System Upgrades</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Emergency Repairs</li>
-                    </ul>
-                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <a href="contact.html#partnership" 
+                   class="inline-flex items-center px-8 py-4 bg-white text-blue-900 rounded-full hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 font-semibold group">
+                    <span>Become a Partner</span>
+                    <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16">
+    <section id="contact" class="py-16 bg-gradient-to-br from-blue-50 to-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
-            <div class="max-w-2xl mx-auto">
-                <form class="space-y-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions about our services? Our team is here to help. Reach out to us and we'll respond as soon as possible.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Information -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt text-blue-900"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700">Location</h4>
+                                <p class="text-gray-600">123 Security Street, Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <i class="fas fa-phone text-blue-900"></i>
+                            </div>
                     <div>
-                        <label class="block text-gray-700 mb-2">Name</label>
-                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-900">
+                                <h4 class="font-semibold text-gray-700">Phone</h4>
+                                <p class="text-gray-600">+254 (123) 456-7890</p>
+                                <p class="text-gray-600">+254 (123) 456-7891</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <i class="fas fa-envelope text-blue-900"></i>
                     </div>
                     <div>
-                        <label class="block text-gray-700 mb-2">Email</label>
-                        <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-900">
+                                <h4 class="font-semibold text-gray-700">Email</h4>
+                                <p class="text-gray-600">info@zexcomm.com</p>
+                                <p class="text-gray-600">support@zexcomm.com</p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-gray-700 mb-2">Message</label>
-                        <textarea class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-900" rows="4"></textarea>
+
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <h4 class="font-semibold text-gray-700 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-facebook-f text-blue-900"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-twitter text-blue-900"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-linkedin-in text-blue-900"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-instagram text-blue-900"></i>
+                            </a>
+                        </div>
                     </div>
-                    <button class="bg-blue-900 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition duration-300">Send Message</button>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name"
+                                placeholder="John Doe"
+                                title="Please enter your full name"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder="john@example.com"
+                                title="Please enter a valid email address"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                required
+                            >
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <select 
+                                id="subject" 
+                                name="subject"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                required
+                            >
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="quote">Request Quote</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea 
+                                id="message" 
+                                name="message"
+                                placeholder="How can we help you?"
+                                title="Please enter your message"
+                                rows="4"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button 
+                            type="submit"
+                            class="w-full bg-blue-900 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center space-x-2"
+                        >
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                 </form>
+                </div>
             </div>
         </div>
     </section>
@@ -436,6 +909,42 @@
                 nav.classList.add('shadow-xl', 'bg-blue-900/95', 'backdrop-blur-sm');
             } else {
                 nav.classList.remove('shadow-xl', 'bg-blue-900/95', 'backdrop-blur-sm');
+            }
+        });
+
+        // Initialize Partners Swiper
+        new Swiper('#partnersSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + ' w-3 h-3 bg-white/50 hover:bg-white transition-all duration-300 mx-1"></span>';
+                },
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                }
             }
         });
     </script>
